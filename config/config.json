@@ -3,15 +3,14 @@
   "development": {
     "username": "root",
     "password": "root",
-    "port": 8889,
-    "database": "passport_DB",
+    "database": "billminder_DB",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "passport_DB",
+    "database": "billminder_DB",
     "host": "localhost",
     "dialect": "mysql"
   },

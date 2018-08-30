@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS billminder_DB;
+CREATE DATABASE billminder_DB;
+
