@@ -12,17 +12,17 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-    // Load bills page (display all bills)
-    app.get("/bills", function(req, res) {
-      db.Bills.findAll({}).then(function(dbBills) {
-        res.render("bills", {
-          bills: dbBills
-        });
+  // Load bills page (display all bills)
+  app.get("/dashboard", function(req, res) {
+    db.Bills.findAll({}).then(function(dbBills) {
+      res.render("dashboard", {
+        bills: dbBills
       });
     });
+  });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
