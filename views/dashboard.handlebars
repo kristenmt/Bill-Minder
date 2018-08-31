@@ -1,0 +1,34 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome, Name!</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Bills Due</h5>
+          {{#each bills}}
+          <p>
+            <strong>Name</strong>: {{this.name}}</p>
+          <p>
+            <p>
+              <strong>Amount</strong>: {{this.amount}}</p>
+            <p>
+              <strong>Due Day:</strong> {{this.dueDay}}</p>
+            <p>
+              <strong>Pay bill:</strong> {{this.URL}}</p>
+            {{/each}}
+
+            <a href="/">← Back To Home</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div id='calendar'></div>
+    </div>
+  </div>
+</div>
