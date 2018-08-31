@@ -3,14 +3,14 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "billminder_DB",
+    "database": "billminder_dB",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "billminder_DB",
+    "database": "billminder_dB",
     "host": "localhost",
     "dialect": "mysql"
   },
