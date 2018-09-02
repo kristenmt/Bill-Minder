@@ -5,6 +5,7 @@
     "password": "root",
     "database": "billminder_dB",
     "host": "localhost",
+    "port": 8889,
     "dialect": "mysql"
   },
   "test": {
