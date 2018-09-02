@@ -80,8 +80,8 @@ body .fc { /* extra precedence to overcome jqui */
 	font-size: 1em;
 	text-align: center;
 	overflow: hidden;
-	font-family: Helvetica Neue,Arial,Verdana,sans-serif;
-	font-weight: 200;
+	font-family: 'Lato', sans-serif;
+  font-weight: 300;
 	/* font-family: "Courier New", Courier, monospace; */
 
 	/* don't allow browser text-selection */
@@ -711,8 +711,13 @@ a.fc-more:hover {
 
 .fc-toolbar h2 {
 	margin: 0;
+	font-family: 'Lato', sans-serif;
+	/* font-weight: 300; */
 }
-
+.fc-left {
+	font-family: 'Lato', sans-serif;
+  /* font-weight: 300; */
+}
 /* button layering (for border precedence) */
 
 .fc-toolbar button {

@@ -5,7 +5,7 @@ form.login {
 
 body {
   background-image: url(../images/billminderbkgwhite.jpg);
-  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 
@@ -16,15 +16,19 @@ body {
 #upcomingBills {
   font-size: 20px;
   text-align: left;
-  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 .card-title {
-  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  /* font-weight: 300; */
 }
-.modal-title {
-  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+.modal h3 {
+  font-family: 'Lato', sans-serif;
+  /* font-weight: 300; */
+}
+.card-body {
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 a{
@@ -34,8 +38,8 @@ a:hover {
   color: #9ece69;
 }
 h1 {
-  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  /* font-weight: 300; */
 }
 .fieldWrapper {
   padding: 20px;
