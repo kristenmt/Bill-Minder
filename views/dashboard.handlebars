@@ -4,15 +4,11 @@
 </div>
 
 
-
-
-
-
 <div class="container">
   <div class="row">
     <div class="col-6">
       <div class="card mt-4">
-        <div class="card-body" id= "upcomingBills">
+        <div class="card-body" id="upcomingBills">
 
 
           {{!-- "Add Bill" Modal --}}
@@ -25,7 +21,7 @@
                 </div>
                 <div class="modal-body">
                   <form role="form">
-                    <h1>Add Account</h1>
+                    <h3>Add Account</h3>
                     <div class="form-group">
                       <label for="bill-name">
                         <i class="fas fa-hand-holding-usd"></i> Bill Name</label>
@@ -60,6 +56,18 @@
                       <label for="due-date">Due Date</label>
                       <input type="date" id="due-date" name="trip" value="2018-01-01" min="2018-01-01" max="2019-12-31" />
                     </div>
+
+                    <div class="form-group">
+                      <label for="remind-me">Remind Me</label>
+                      <br>
+                      <select>
+                        <option value="0">-Select One-</option>
+                        <option value="3">3 days ahead</option>
+                        <option value="7">1 week ahead</option>
+                        <option value="14">2 weeks ahead</option>
+                      </select>
+                    </div>
+
                     <div class="form-group">
                       <label>
                         <input type="checkbox" value="" checked> Recurring</label>
@@ -76,13 +84,12 @@
 
           <!--Upcoming Bills Section-->
           <h3 class="card-title">Upcoming Bills</h3>
-          <hr>
-          {{#each bills}}
-          
+          <hr> {{#each bills}}
+
           <p>
             <b>Name</b>: {{this.name}}</p>
-          
-          
+
+
           <button id="moreInfo" type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo-{{this.id}}">
             <span class="glyphicon glyphicon-collapse-down"></span> More Info
           </button>
@@ -91,29 +98,37 @@
 
           <div id="demo-{{this.id}}" class="collapse">
             <ol class="list-group">
-              <li class="list-group-item"><strong>Amount</strong>: ${{this.amount}}</li>
-              <li class="list-group-item"><strong>Due Day:</strong> {{this.dueDay}}</li>
-              <li class="list-group-item"><strong>Pay bill:</strong> <a href = "{{this.URL}}">{{this.URL}}</a></li>
+              <li class="list-group-item">
+                <strong>Amount</strong>: ${{this.amount}}</li>
+              <li class="list-group-item">
+                <strong>Due Day:</strong> {{this.dueDay}}</li>
+              <li class="list-group-item">
+                <strong>Pay bill:</strong>
+                <a href="{{this.URL}}">{{this.URL}}</a>
+              </li>
             </ol>
           </div>
-         <br>
           <br>
-            {{/each}}
-          
-           
+          <br> {{/each}}
 
             <!-- Trigger the "Add Bill" modal with a button -->
             <button type="button" class="btn" id="addBill" style="background-color: #9ece69">Add Bill</button>
             <br>
             <a href="/">← Back To Home</a>
 
-          </div>
+
+          <!-- Trigger the "Add Bill" modal with a button -->
+          <button type="button" class="btn btn-primary" id="addBill">Add Bill</button>
+          <br>
+          <a href="/">← Back To Home</a>
+
         </div>
       </div>
+    </div>
 
-      <!--Calendar-->
-      <div class="col-6">
-        <div id='calendar'></div>
-      </div>
+    <!--Calendar-->
+    <div class="col-6">
+      <div id='calendar'></div>
     </div>
   </div>
+</div>
