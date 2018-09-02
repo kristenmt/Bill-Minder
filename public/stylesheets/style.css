@@ -4,15 +4,34 @@ form.login {
 }
 
 body {
-  background-color: rgb(238, 253, 253);
+  background-image: url(../images/billminderbkgwhite.jpg);
+  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-weight: 300;
 }
-
-.fa-money-bill-wave{
-  font-weight: 900;
-  font-size: 150px;
-  color: rgb(106, 173, 39);
+#upcomingBills {
+  font-size: 20px;
+  text-align: left;
+  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-weight: 300;
 }
-
+.card-title {
+  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-weight: 300;
+}
+.modal-title {
+  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-weight: 300;
+}
+a{
+  color: black;
+}
+a:hover {
+  color: #9ece69;
+}
+h1 {
+  font-family: Helvetica Neue, Arial, Verdana, sans-serif;
+  font-weight: 300;
+}
 .fieldWrapper {
   padding: 20px;
 }

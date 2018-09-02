@@ -65,7 +65,9 @@ body .fc { /* extra precedence to overcome jqui */
 	/* will inherit .fc-bgevent's styles */
 	background: #d7d7d7;
 }
-
+#calendar {
+	background-color: white;
+}
 
 /* Icons (inline elements with styled text that mock arrow icons)
 --------------------------------------------------------------------------------------------------*/
