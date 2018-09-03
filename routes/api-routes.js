@@ -41,6 +41,23 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/bills", function(req, res) {
+    console.log(req.body);
+    db.Bills.create({
+      name: req.body.name,
+      amount: req.body.amount,
+      dueDay: req.body.dueDay,
+      URL: req.body.URL,
+      remind: req.body.remind,
+      paid: req.body.paid,
+      recurring: req.body.recurring,
+      category: req.body.category
+    })
+      .then(function(dbBills) {
+        res.json(dbBills);
+      });
+  });
+
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
