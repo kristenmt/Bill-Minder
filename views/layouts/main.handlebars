@@ -9,9 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-   
-  {{!-- Calendar links --}}
+    crossorigin="anonymous"> {{!-- Calendar links --}}
   <link href='/fullcalendar.css' rel='stylesheet' />
   <link href='/.DS_Store' rel='stylesheet' media='print' />
   <script src='/lib/moment.min.js'></script>
@@ -21,8 +19,8 @@
   <script src='/fullcalendar.min.js'></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <title>Home Page</title>
 
   <script>
@@ -71,6 +69,10 @@
             "start": "2018-08-12T20:00:00"
           }
         ]
+      });
+
+      $.get("/api/user_data").then(function (data) {
+        $(".member-name").text(data.email);
       });
 
     });
