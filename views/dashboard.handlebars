@@ -31,7 +31,7 @@
                       <label for="bill-cat">
                         <i class="fas fa-hand-holding-usd"></i> Bill Category</label>
                       <br>
-                      <select>
+                      <select id="bill-cat">
                         <option value="0">-Select One-</option>
                         <option value="1">credit cards</option>
                         <option value="2">utilities</option>
@@ -60,7 +60,7 @@
                     <div class="form-group">
                       <label for="remind-me">Remind Me</label>
                       <br>
-                      <select>
+                      <select id= "reminder">
                         <option value="0">-Select One-</option>
                         <option value="3">3 days ahead</option>
                         <option value="7">1 week ahead</option>
@@ -70,12 +70,12 @@
 
                     <div class="form-group">
                       <label>
-                        <input type="checkbox" value="" checked> Recurring</label>
+                        <input type="checkbox" id = "recurring" value="" checked> Recurring</label>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn" style="background-color: #9ece69">
+                  <button type="submit" class="btn" id = "newbillbtn" style="background-color: #9ece69">
                     <i class="fas fa-power-off"></i> Submit</button>
                 </div>
               </div>
@@ -128,3 +128,7 @@
     </div>
   </div>
 </div>
+
+
+ <!-- Custom Script -->
+ <script src="/js/add_bill.js" type="text/javascript"></script>

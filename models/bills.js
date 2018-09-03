@@ -7,6 +7,8 @@ module.exports = function (sequelize, DataTypes) {
     URL: DataTypes.STRING,
     remind: DataTypes.INTEGER,
     paid: DataTypes.BOOLEAN,
+    recurring: DataTypes.BOOLEAN,
+    category: DataTypes.STRING,
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("NOW()"),
