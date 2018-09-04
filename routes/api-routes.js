@@ -25,6 +25,18 @@ module.exports = function (app) {
     });
   });
 
+  // DELETE route for deleting bills
+  app.delete("/api/bills/:id", function(req, res) {
+    db.Bills.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbBills) {
+        res.json(dbBills);
+      });
+  });
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
