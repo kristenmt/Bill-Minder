@@ -12,6 +12,19 @@ module.exports = function (app) {
   });
 
 
+  // Load bills page (display all bills)
+  app.get("/dashboard", function (req, res) {
+    db.Bills.findAll({
+      where: {
+        userID: activeID,
+      }
+    }).then(function (dbBills) {
+      res.render("dashboard", {
+        bills: dbBills
+      });
+    });
+  });
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -42,7 +55,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/bills", function(req, res) {
+  app.post("/api/bills", function (req, res) {
     console.log(req.body);
     // activeID = JSON.parse(JSON.stringify(activeID));
     console.log("active id: " + activeID);
@@ -57,7 +70,7 @@ module.exports = function (app) {
       recurring: req.body.recurring,
       category: req.body.category
     })
-      .then(function(dbBills) {
+      .then(function (dbBills) {
         res.json(dbBills);
       });
   });
