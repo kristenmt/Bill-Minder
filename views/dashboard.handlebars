@@ -76,7 +76,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="submit" class="btn" id = "newbillbtn" style="background-color: #9ece69">
-                    <i class="fas fa-power-off"></i> Submit</button>
+                    <i class="fas fa-sign-in-alt"></i> Submit</button>
                 </div>
               </div>
             </div>
@@ -86,16 +86,18 @@
           <h3 class="card-title">Upcoming Bills</h3>
           <hr> {{#each bills}}
 
+      <div>
           <p>
-            <b>Name</b>: {{this.name}}</p>
+            <b>Name</b>: {{this.name}} <img src="./images/checkmark.png" class= "checkmark d-none"/> </p>
 
 
-          <button id="moreInfo" type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo-{{this.id}}">
+          <button id="moreInfo" type="button" class="btn btn-default actionBtn" data-toggle="collapse" data-target="#demo-{{this.id}}">
             <span class="glyphicon glyphicon-collapse-down"></span> More Info
           </button>
-          <button type="button" class="btn btn-default" id="paid">Paid</button>
-          <button type="button" class="btn btn-default" id="delete">Delete</button>
+          <button class="btn btn default actionBtn"><i class="fas fa-toggle-off toggle"><span class="Y"> Paid</span></i></button>
 
+          <button type="button" class="btn btn-default actionBtn" id="delete">Delete</button>
+      </div>
           <div id="demo-{{this.id}}" class="collapse">
             <ol class="list-group">
               <li class="list-group-item">

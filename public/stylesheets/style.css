@@ -57,3 +57,9 @@ h1 {
   font-size: 1.25em;
 }
 
+.actionBtn, .Y {
+  font-weight: 400 !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+
+}
+
