@@ -6,6 +6,7 @@ var activeID;
 module.exports = function (app) {
   // Get all bills
   app.get("/api/bills", function (req, res) {
+    
     db.Bills.findAll({}).then(function (dbBills) {
       res.json(dbBills);
     });
@@ -14,25 +15,34 @@ module.exports = function (app) {
 
   // Load bills page (display all bills)
   app.get("/dashboard", function (req, res) {
-    db.Bills.findAll({
-      where: {
-        userID: activeID,
-      }
-    }).then(function (dbBills) {
-      res.render("dashboard", {
-        bills: dbBills
+
+    // Check if user is currently logged in
+    if (!req.user) {
+      console.log("Access Denied, user is not logged in");
+    } else {
+      // set activeID user to the current logged in user
+      activeID = req.user.id;
+      console.log("find all: " + activeID);
+      db.Bills.findAll({
+        where: {
+          userID: activeID,
+        }
+      }).then(function (dbBills) {
+        res.render("dashboard", {
+          bills: dbBills
+        });
       });
-    });
+    }
   });
 
   // DELETE route for deleting bills
-  app.delete("/api/bills/:id", function(req, res) {
+  app.delete("/api/bills/:id", function (req, res) {
     db.Bills.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(function(dbBills) {
+      .then(function (dbBills) {
         res.json(dbBills);
       });
   });
