@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var activeID;
 
 module.exports = function (app) {
   // Get all bills
@@ -43,7 +44,10 @@ module.exports = function (app) {
 
   app.post("/api/bills", function(req, res) {
     console.log(req.body);
+    // activeID = JSON.parse(JSON.stringify(activeID));
+    console.log("active id: " + activeID);
     db.Bills.create({
+      userID: activeID,
       name: req.body.name,
       amount: req.body.amount,
       dueDay: req.body.dueDay,
@@ -76,8 +80,12 @@ module.exports = function (app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        email: req.user.username
+        username: req.user.username
+
       });
+      activeID = req.user.id;
+
+      console.log("active id: " + activeID);
     }
   });
 
