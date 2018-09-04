@@ -66,7 +66,7 @@ $(document).ready(function () {
       $(this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
       isToggleOff = false;
     //   $(this).parent.();
-      console.log( $(this).parent().parent().next("img"));
+      // console.log( $(this).parent().parent().next("img"));
     }
     else {$(this).removeClass("fa-toggle-on").addClass("fa-toggle-off");
       isToggleOff = true;
