@@ -32,7 +32,6 @@ $(document).ready(function () {
     console.log(newBill);
     submitBill(newBill);
 
-
     // If we're updating a post run updatePost to update a post
     // Otherwise run submitPost to create a whole new post
     //     if (updating) {
@@ -42,24 +41,36 @@ $(document).ready(function () {
     //     else {
     //       submitBill(newBill);
     //     }
-
-
-    $.get("/api/user_data").then(function (data) {
-
-      console.log(data.id);
-
-    });
-
   });
 
-  // Submits a new post and brings user to blog page upon completion
+  // Submits a new bill and brings user to dashboard page upon completion
   function submitBill(Post) {
     $.post("/api/bills/", Post, function () {
       window.location.href = "/dashboard";
     });
   }
+
+  //click event for delete button
+  $("#delete").on("click", function handleDelete(event) {
+    event.preventDefault();
+    var currentID = $("#delete").val();
+    deleteBill(currentID);
+  });
+
+  // This function does an API call to delete bills
+  function deleteBill(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/bills/" + id
+    })
+      .then(function() {
+        window.location.href = "/dashboard";
+      });
+  }
+
    
   var isToggleOff = true;
+  //click event for paid toggle button
   $(document).on("click",".toggle",function () {
     // console.log("hello");
     if (isToggleOff){
