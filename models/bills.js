@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     userID: DataTypes.INTEGER,
     name: DataTypes.STRING,
     amount: DataTypes.INTEGER,
-    dueDay: DataTypes.DATEONLY,
+    dueDay: DataTypes.DATE,
     URL: DataTypes.STRING,
     remind: DataTypes.INTEGER,
     paid: DataTypes.BOOLEAN,

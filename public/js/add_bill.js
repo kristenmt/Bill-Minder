@@ -25,7 +25,7 @@ $(document).ready(function () {
       URL: urlInput.val().trim(),
       remind: remindInput.val().trim(),
       paid: 0,
-      recurring: recurringInput.val().trim(),
+      recurring: 0,
       category: billCategorySelect.val().trim()
     };
 
