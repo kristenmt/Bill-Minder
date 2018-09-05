@@ -34,39 +34,39 @@
 
 
       $('#calendar').fullCalendar({
-        defaultDate: '2018-08-30',
+        defaultDate: '2018-09-06',
         editable: true,
         eventLimit: true, // allow "more" link when too many events
         events: [
           {
-            "title": "All Day Event",
-            "start": "2018-08-01"
+            "title": "discover",
+            "start": "2018-09-18"
           },
           {
             "id": "999",
-            "title": "Repeating Event",
-            "start": "2018-08-09T16:00:00-05:00"
+            "title": "amex",
+            "start": "2018-09-27"
           },
           {
             "id": "999",
-            "title": "Repeating Event",
-            "start": "2018-08-16T16:00:00-05:00"
+            "title": "rent",
+            "start": "2018-09-30"
           },
           {
-            "title": "Lunch",
-            "start": "2018-08-15T12:00:00-05:00"
+            "title": "studen loan1",
+            "start": "2018-09-14"
           },
           {
-            "title": "Meeting",
-            "start": "2018-08-22T14:30:00-05:00"
+            "title": "duke",
+            "start": "2018-09-25"
           },
           {
-            "title": "Happy Hour",
-            "start": "2018-08-11T17:30:00-05:00"
+            "title": "public storage",
+            "start": "2018-09-25"
           },
           {
-            "title": "Dinner",
-            "start": "2018-08-12T20:00:00"
+            "title": "student loan2",
+            "start": "2018-10-15"
           }
         ]
       });
@@ -80,7 +80,7 @@
   </script>
   <style>
     body {
-      padding: 0;
+      padding: 5px;
       text-align: center;
       font-size: 14px;
       font-family: Helvetica Neue, Arial, Verdana, sans-serif;
@@ -90,6 +90,12 @@
     #calendar {
       max-width: 500px;
       margin: 0 auto;
+      padding: 10px 5px 5px 5px;
+      border: 1px solid rgb(230, 227, 227);
+      border-radius: .25em;
+    }
+    #calendar h2 {
+      padding-left: 15px;
     }
   </style>
 
