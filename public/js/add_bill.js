@@ -53,8 +53,26 @@ $(document).ready(function () {
   //click event for delete button
   $("#delete").on("click", function handleDelete(event) {
     event.preventDefault();
-    var currentID = $("#delete").val();
-    deleteBill(currentID);
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this bill!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your bill has been deleted!", {
+          icon: "success",
+        });
+        var currentID = $("#delete").val();
+      deleteBill(currentID);
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+   
+    
   });
 
   // This function does an API call to delete bills
@@ -83,8 +101,5 @@ $(document).ready(function () {
       isToggleOff = true;
     }
   }); 
-
-
-
+  });
   
-});
