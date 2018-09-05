@@ -1,15 +1,15 @@
 $(document).ready(function () {
-// Getting jQuery references to the post body, title, form, and category select
-// var bodyInput = $("#body");
-// var titleInput = $("#title");
-// var cmsForm = $("#cms");
-// var postCategorySelect = $("#category");
+  // Getting jQuery references to the post body, title, form, and category select
+  // var bodyInput = $("#body");
+  // var titleInput = $("#title");
+  // var cmsForm = $("#cms");
+  // var postCategorySelect = $("#category");
   var nameInput = $("#bill-name");
   var amountInput = $("#billamount");
   var duedateInput = $("#due-date");
   var urlInput = $("#url");
   var remindInput = $("#reminder");
-  var recurringInput = $("#recurring");
+  // var recurringInput = $("#recurring");
   var billCategorySelect = $("#bill-cat");
   // Giving the postCategorySelect a default value
   billCategorySelect.val("Miscellaneous");
@@ -31,16 +31,6 @@ $(document).ready(function () {
 
     console.log(newBill);
     submitBill(newBill);
-
-    // If we're updating a post run updatePost to update a post
-    // Otherwise run submitPost to create a whole new post
-    //     if (updating) {
-    //       newBill.id = postId;
-    //       updateBill(newBill);
-    //     }
-    //     else {
-    //       submitBill(newBill);
-    //     }
   });
 
   // Submits a new bill and brings user to dashboard page upon completion
@@ -63,28 +53,58 @@ $(document).ready(function () {
       method: "DELETE",
       url: "/api/bills/" + id
     })
-      .then(function() {
+      .then(function () {
         window.location.href = "/dashboard";
       });
   }
 
-   
+
   var isToggleOff = true;
   //click event for paid toggle button
-  $(document).on("click",".toggle",function () {
-    // console.log("hello");
-    if (isToggleOff){
+  $(document).on("click", ".toggle", function () {
+    if (isToggleOff) {
       $(this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
       isToggleOff = false;
-    //   $(this).parent.();
-      // console.log( $(this).parent().parent().next("img"));
     }
-    else {$(this).removeClass("fa-toggle-on").addClass("fa-toggle-off");
+    else {
+      $(this).removeClass("fa-toggle-on").addClass("fa-toggle-off");
       isToggleOff = true;
     }
-  }); 
+  });
 
 
-
+  // click event for update button
+  $("#update").on("click", function handleUpdate(event) {
+    event.preventDefault();
   
+    var currentID = $("#update").val();
+    var paid = $(this).attr("data-paid");
+    console.log("what is this: " + paid);
+    // paid = !paid;
+    if(paid === "false"){
+      paid = "true";
+      $("#update").attr("data-paid", "true");
+    } else if (paid === "true") {
+      paid = "false";
+      $("#update").attr("data-paid", "false");
+    }
+   
+    updateBill(currentID,paid);
+  });
+
+
+  // This function does an API call to update a bill
+  function updateBill(id, paid) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/bills/" + id,
+      data: {paid: paid}
+    })
+      .then(function () {
+        // window.location.href = "/dashboard";
+      });
+  }
+
+
+
 });

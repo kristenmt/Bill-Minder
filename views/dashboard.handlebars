@@ -1,6 +1,10 @@
 <div class="jumbotron">
-    <a href="/"><img src="images/billminderlogofinal2.png" alt="bill minder logo"></a>
-    <h1 class="display-4">Welcome, <span class="member-name"></span></h1>
+  <a href="/">
+    <img src="images/billminderlogofinal2.png" alt="bill minder logo">
+  </a>
+  <h1 class="display-4">Welcome,
+    <span class="member-name"></span>
+  </h1>
 </div>
 
 
@@ -60,7 +64,7 @@
                     <div class="form-group">
                       <label for="remind-me">Remind Me</label>
                       <br>
-                      <select id= "reminder">
+                      <select id="reminder">
                         <option value="0">-Select One-</option>
                         <option value="3">3 days ahead</option>
                         <option value="7">1 week ahead</option>
@@ -70,12 +74,12 @@
 
                     <div class="form-group">
                       <label>
-                        <input type="checkbox" id = "recurring"> Recurring</label>
+                        <input type="checkbox" id="recurring"> Recurring</label>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn" id = "newbillbtn" style="background-color: #9ece69">
+                  <button type="submit" class="btn" id="newbillbtn" style="background-color: #9ece69">
                     <i class="fas fa-sign-in-alt"></i> Submit</button>
                 </div>
               </div>
@@ -86,18 +90,23 @@
           <h3 class="card-title">Upcoming Bills</h3>
           <hr> {{#each bills}}
 
-      <div>
-          <p>
-            <b>Name</b>: {{this.name}} <img src="./images/checkmark.png" class= "checkmark d-none"/> </p>
+          <div>
+            <p>
+              <b>Name</b>: {{this.name}}
+              <img src="./images/checkmark.png" class="checkmark d-none" /> </p>
 
 
-          <button id="moreInfo" type="button" class="btn btn-default actionBtn" data-toggle="collapse" data-target="#demo-{{this.id}}">
-            <span class="glyphicon glyphicon-collapse-down"></span> More Info
-          </button>
-          <button class="btn btn default actionBtn"><i class="fas fa-toggle-off toggle"><span class="Y"> Paid</span></i></button>
+            <button id="moreInfo" type="button" class="btn btn-default actionBtn" data-toggle="collapse" data-target="#demo-{{this.id}}">
+              <span class="glyphicon glyphicon-collapse-down"></span> More Info
+            </button>
+            <button class="btn btn default actionBtn" value={{this.id}} id="update" data-paid="false">
+              <i class="fas fa-toggle-off toggle">
+                <span class="Y"> Paid</span>
+              </i>
+            </button>
 
-          <button type="button" class="btn btn-default actionBtn" value = {{this.id}} id="delete">Delete</button>
-      </div>
+            <button type="button" class="btn btn-default actionBtn" value={{this.id}} id="delete">Delete</button>
+          </div>
           <div id="demo-{{this.id}}" class="collapse">
             <ol class="list-group">
               <li class="list-group-item">
@@ -113,10 +122,10 @@
           <br>
           <br> {{/each}}
 
-            <!-- Trigger the "Add Bill" modal with a button -->
-            <button type="button" class="btn" id="addBill" style="background-color: #9ece69">Add Bill</button>
-            <br>
-            <a href="/logout">← Back To Home</a>
+          <!-- Trigger the "Add Bill" modal with a button -->
+          <button type="button" class="btn" id="addBill" style="background-color: #9ece69">Add Bill</button>
+          <br>
+          <a href="/logout">← Back To Home</a>
 
 
         </div>
@@ -132,5 +141,5 @@
 </div>
 
 
- <!-- Custom Script -->
- <script src="/js/add_bill.js" type="text/javascript"></script>
+<!-- Custom Script -->
+<script src="/js/add_bill.js" type="text/javascript"></script>
