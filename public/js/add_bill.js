@@ -94,6 +94,10 @@ $(document).ready(function () {
     if (isToggleOff){
       $(this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
       isToggleOff = false;
+      swal({
+        title: "PAID!",
+        icon: "success",
+      });
     //   $(this).parent.();
       // console.log( $(this).parent().parent().next("img"));
     }
