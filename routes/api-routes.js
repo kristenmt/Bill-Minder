@@ -6,7 +6,7 @@ var activeID;
 module.exports = function (app) {
   // Get all bills
   app.get("/api/bills", function (req, res) {
-    
+
     db.Bills.findAll({}).then(function (dbBills) {
       res.json(dbBills);
     });
@@ -122,6 +122,27 @@ module.exports = function (app) {
 
       console.log("active id: " + activeID);
     }
+
+
   });
+
+
+  // PUT route for updating posts
+  app.put("/api/bills/:id", function (req, res) {
+    console.log("api-routes-upate: " + req.body.paid);
+    // console.log("api-routes-upate: " + JSON.stringify(req.body));
+    db.Bills.update(
+      { paid: req.body.paid },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    )
+      .then(function (dbBills) {
+        res.json(dbBills);
+      });
+  });
+
 
 };
