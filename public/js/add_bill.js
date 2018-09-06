@@ -54,15 +54,15 @@ $(document).ready(function () {
       if (willDelete) {
         swal("Poof! Your bill has been deleted!", {
           icon: "success",
-        });
+        })
+        .then(function() {
         var currentID = $("#delete").val();
       deleteBill(currentID);
+        })
       } else {
         swal("Your imaginary file is safe!");
       }
     });
-   
-    
   });
 
   // This function does an API call to delete bills
@@ -71,9 +71,9 @@ $(document).ready(function () {
       method: "DELETE",
       url: "/api/bills/" + id
     })
-      .then(function () {
-        window.location.href = "/dashboard";
-      });
+      .then(function() {
+          window.location.href = "/dashboard";
+});
   }
 
 
