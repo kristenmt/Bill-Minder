@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Bill Buddy</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -29,15 +29,55 @@
 
     <div class="jumbotron">
         <a href="/">
-            <img src="images/billminderlogofinal2.png" alt="bill minder logo">
+            <img src="images/billbuddylogo.png" alt="bill buddy logo">
         </a>
-        <h1 class="display-4">Bill-Minder!</h1>
-        <p class="lead">Bill-Minder helps you create reminders so you can keep track and pay all your bills on time. Say goodbye to stress
-            and having to remember when everything is due.</p>
+        <h1 class="display-4">Bill Buddy!</h1>
+        <p class="lead">Bill Buddy helps you create reminders so you can keep track and pay all your bills on time. Say
+            goodbye to stress and having to remember when everything is due.</p>
         <hr class="my-4">
         <p>It combines your calendar and reminders into one easy to use app.</p>
         <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
     </div>
+
+    <div class="intro-one">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+
+                <video width="550" height="300" autoplay>
+                    <source src="images/billbuddyvid1.mp4">
+                </video>
+
+            </div>
+            <div class="col-5" id="intro-text">
+                <h2>Enter ALL your bills</h2>
+                <p>Choose when you want a reminder, if it's a recurring bill or not, and add an optional link directly to the creditor's website.</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <div class="intro-two">
+            <div class="row">
+                <div class="col-1"></div>
+                
+                <div class="col-5" id="intro-text">
+                    <h2>Mark bills paid, even delete bills!</h2>
+                    <p>Mark a bill paid when you've paid it. You can even delete a bill when you have paid it in full and don't need it anymore!</p>
+                </div>
+                <div class="col-5">
+    
+                        <video width="550" height="300" autoplay>
+                            <source src="images/billbuddyvid2.mp4">
+                        </video>
+        
+                    </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+
+
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -53,11 +93,13 @@
                 <div class="modal-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item active" onclick="showForgot()">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sign In
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Sign
+                                In
                             </a>
                         </li>
                         <li class="nav-item" onclick="hideForgot()">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Create New
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Create
+                                New
                             </a>
 
                         </li>
@@ -153,9 +195,5 @@
     <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
-<footer>
-    <p>Copyright 2018<br>
-    Bill Minder</p>
-</footer>
 
 </html>
