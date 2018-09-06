@@ -4,7 +4,7 @@ form.login {
 }
 
 body {
-  background-image: url(../images/billminderbkg4.jpg);
+  background-image: url(../images/billminderbkgwhite2.jpg);
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
@@ -13,7 +13,14 @@ body {
   text-align: left;
   background-color: #f0f3fa;
 }
-
+.jumbotron h1 {
+  text-align: center;
+  font-size: 60px;
+}
+.jumbotron p {
+  font-size: 22px;
+  margin-left: 30px;
+}
 #upcomingBills {
   font-size: 20px;
   text-align: left;
@@ -31,6 +38,24 @@ body {
 .card-body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+}
+.intro-one {
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+.intro-two {
+  padding-bottom: 50px;
+}
+#intro-text {
+  padding-top: 100px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+#intro-text h2 {
+  font-size: 50px;
+  font-weight: 600px;
+  text-align: center;
 }
 a{
   color: black;
@@ -65,10 +90,6 @@ h1 {
   font-weight: 400 !important;
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 
-}
-footer {
-  background-color: #9ece69;
-  color: white;
 }
 
 .fa-toggle-on {
